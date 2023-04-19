@@ -2,6 +2,7 @@ package Utils;
 
 import StepDefinitions.pageInitializer;
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.w3c.dom.DOMConfiguration;
 
 import java.io.File;
 import java.io.IOException;
@@ -44,10 +46,16 @@ public class CommonMethods extends pageInitializer {
         driver.get(ConfigReader.getPropertyValue("url"));
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(Constants.WAIT_TIME));
         initializePageObjects();
+        DOMConfigurator.configure("log4j.xml");
+        Log.startTestCase("This is the beginning of my Test case");
+        Log.info("My test case is executing right now");
+        Log .warning("My test case might have some trivial issues");
 
 
     }
     public static void closeBrowser(){
+        Log.info("This test case is about to get completed");
+        Log.endTestCase("This test case is finished");
 
         driver.close();
     }
