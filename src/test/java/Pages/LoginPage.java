@@ -18,7 +18,7 @@ public class LoginPage extends CommonMethods {
 
     @FindBy(id="btnLogin")
     public WebElement loginBtn;
-    @FindBy(id = "welcome")
+    @FindBy( id="welcome")
     public WebElement welcomeIcon;
 
     @FindBy(xpath = "//a[text()='Logout']")
