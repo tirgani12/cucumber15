@@ -21,7 +21,8 @@ public class ConfigReader {
         return prop;
     }
     public static String getPropertyValue(String propKey){
-       return prop.getProperty(propKey);
+
+        return prop.getProperty(propKey);
     }
 
 }

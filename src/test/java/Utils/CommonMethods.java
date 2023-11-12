@@ -1,6 +1,7 @@
 package Utils;
 
 import StepDefinitions.pageInitializer;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.OutputType;
@@ -30,6 +31,7 @@ public class CommonMethods extends pageInitializer {
         String browserType=ConfigReader.getPropertyValue("browserType");
         switch (browserType) {
             case "Chrome":
+                WebDriverManager.chromedriver().setup();
 
                 ChromeOptions ops = new ChromeOptions();
                 ops.addArguments("--no-sandbox");

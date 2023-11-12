@@ -91,6 +91,7 @@ public class APIWorkflowSteps {
         //it will store the employee id coming from get call which will be compared to global employee id
         String tempEmpId = response.jsonPath().getString(string);
         //assertion we will add
+        Assert.assertEquals(employee_id,tempEmpId);
     }
 
     @Then("the retrieved data at {string} object matches with the data of created employee")

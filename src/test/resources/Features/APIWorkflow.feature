@@ -23,7 +23,7 @@ Feature: API Workflow for HRMS
     Then the employee data we get having id "employee.employee_id" must match with globally stored employee id
     Then the retrieved data at "employee" object matches with the data of created employee
       |emp_firstname|emp_lastname|emp_middle_name|emp_gender|emp_birthday|emp_status|emp_job_title|
-      |Song      |Sung      |Sang             |Male    |1990-05-21  |confirmed |Singer     |
+      |Song      |Sung      |Sang             |Male    |1990-05-21  |Confirmed |Singer     |
   @apipayloadmoredynamic
   Scenario: create an employee using API call
     Given a request is prepared to create an employee with dynamic data "Song" , "Sung" , "Sang" , "M" , "1990-05-21" , "Confirmed" , "Singer"
